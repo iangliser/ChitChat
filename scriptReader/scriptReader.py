@@ -50,6 +50,12 @@ def write_file():
 				writer.writerow(row)
 			window.quit() #finally close the program
 
+#Button placed at the top of the program that executes write_file()
+#The 'text=...' portion is sloppy because aligning the button in a text widget while using .pack() for the text widget proved to be quite challenging
+#As for now this will do..
+finishButton = Button(window, text="\t\tPlease select all messages that caused a topic shift, then <click here> when all topic shifts have been selected\t\t\t\t", command = write_file, font = ('Times New Roman', 18))
+T.window_create("end", window=finishButton, align = 'baseline')
+
 #This portion is responsible for the create of all checkbuttons
 with open(fileName) as csvFile:
 	script = csv.DictReader(csvFile) #creation of dictreader objects for easy iteration through specific rows
@@ -65,11 +71,5 @@ with open(fileName) as csvFile:
 		T.insert("end", "\n")
 		T.configure(state='disabled')
 		count += 1
-
-#Button placed at the top of the program that executes write_file()
-#The 'text=...' portion is sloppy because aligning the button in a text widget while using .pack() for the text widget proved to be quite challenging
-#As for now this will do..
-finishButton = Button(window, text="Finish", command = write_file, font = ('Times New Roman', 18))
-T.window_create("end", window=finishButton, align = 'baseline')
 
 window.mainloop()

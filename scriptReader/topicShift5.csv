@@ -1,0 +1,28 @@
+0,System,>> User 1 has Connected
+0,System,>> All chat participants have arrived. You may now chat!
+1,System,>> User 2 has Connected
+0,User 2,helo
+0,User 1,hi!
+1,User 1,how r u today?
+0,User 2,good thanks! you?
+0,User 1,im splendid!
+0,User 2,splendid indeed
+0,User 2,what did you have for lunch today?
+0,User 1,i didnt have lunch!
+1,User 1,wbu?
+0,User 2,thats no good
+0,User 2,sushi
+1,User 1,ugh im jealous :(
+0,User 2,did you have breakfast?
+0,User 2,i'm concerned
+1,User 1,i did not
+0,User 2,coffee?
+0,User 1,coffee!
+1,Admin,please stop talking about coffee
+0,User 2,no
+1,User 2,tea?
+0,Admin,:(
+0,User 1,i probably should i think im getting sick
+0,User 2,ew
+0,User 2,did you get a flu shot?
+0,System,>> This chat has now expired.
