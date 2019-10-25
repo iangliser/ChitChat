@@ -13,7 +13,7 @@ import tkinter as tk
 # Input of Chatplat chatroom code, to be use for patch
 chatPlatCode = input("Enter ChatPlat code: ")
 participantID = input("Enter Participant ID: ")
-
+#comment
 file = open("ParticipantNumber.txt", "w")
 file.write(participantID)
 # Hide shell after entering code, commented out for now, for troubleshooting
