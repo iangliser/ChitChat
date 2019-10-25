@@ -1,4 +1,6 @@
-%Warning this code is majorly shoddy and needs serious work!!
+%Warning: this code is barely working and will crash more often than not
+%All credit is due to Ethan Murray who posted the prototype code found here:
+%mathworks.com/matlabcentral/answers/329166-plotting-random-points-within-boundary
 
 
 for i = 1: 40

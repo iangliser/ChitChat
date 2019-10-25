@@ -1,5 +1,3 @@
-import self as self
-
 try:
     import Tkinter as tkobj  # Python 2
 except ImportError:
@@ -14,9 +12,10 @@ import tkinter as tk
 
 # Input of Chatplat chatroom code, to be use for patch
 chatPlatCode = input("Enter ChatPlat code: ")
-#participantID = input ("Enter Participant ID: ")
+participantID = input("Enter Participant ID: ")
 
-
+file = open("ParticipantNumber.txt", "w")
+file.write(participantID)
 # Hide shell after entering code, commented out for now, for troubleshooting
 """
 kernel32 = ctypes.WinDLL('kernel32') #Hides terminal
@@ -42,23 +41,26 @@ count = 1
 nextCount = 0
 patch = 0
 checkpoint = 0
+checker = 0
+skip = 0
 
 procCount = 0
 procArrayCount = 1
 procList = []
 
 outroCount = 0
-# outroArrayCount = 1
-# outroList = []
 answer = []
 
 # LABEL WIDGET
 startImage = tkobj.PhotoImage(file=".\\sample_images\\proc\\proc.png")
 enterImage = tkobj.PhotoImage(file=".\\sample_images\\enterImage.png")
 
-# overEstimateStartImage = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator.png")
-# overEstimatePatchImage = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimatorPatch.png")
+# underEstimateStartImage = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underEstimator.png")
+# underEstimatePatchImage = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underEstimatorPatch.png")
 wait = tkobj.PhotoImage(file=".\\sample_images\\waitScreen.png")
+submit = tkobj.PhotoImage(file=".\\sample_images\\submit.png")
+notify = tkobj.PhotoImage(file= ".\\sample_images\\notify.png")
+patchImg = tkobj.PhotoImage(file= ".\\sample_images\\patch.png")
 overEstimateImage1 = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator1.png")
 overEstimateImage2 = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator2.png")
 overEstimateImage3 = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator3.png")
@@ -79,7 +81,7 @@ label = tkobj.Label(image=startImage)
 label.pack(expand=1)
 
 # Creates array of start images for introduction before procedure
-while procArrayCount < 7:  # Amount of Images is n - 1 = 6
+while procArrayCount < 8:  # Amount of Images is n - 1 = 6
     procList.append(tkobj.PhotoImage(file=".\\sample_images\\proc\\proc" + str(procArrayCount) + ".png"))
     procArrayCount += 1
 #####CHNG NMR
@@ -88,18 +90,12 @@ while count < 41:  # Amount of Images is n - 1 = 40
     pointList.append(tkobj.PhotoImage(file=".\\sample_images\\points\\point (" + str(count) + ").png"))
     count += 1
 
-# Creates array of 'outro' images following the procedure
-# THIS INCLUDES PATCH IMAGES
-# while outroArrayCount<4: #Amount of Images is n - 1 = 3
-#	outroList.append(tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator" + str(outroArrayCount) + ".png"))
-#	outroArrayCount += 1
-
-
 # ENTRY WIDGET
 fontType = ('Times New Roman', 30)
 txt = tkobj.Entry(window, validate='key', font=fontType, width=5, justify="center")
 txt.focus()
 txt.pack(ipady=5, pady=100)
+
 
 def disable(event):
     txt.get()
@@ -111,7 +107,6 @@ def validate_input():
         valid = True
     else:
         valid = False
-
 
 def pressed(press):
     if checkpoint == 0:
@@ -125,106 +120,105 @@ def pressed(press):
         time.sleep(2)
         openChatplat(chatPlatCode)
 
-
 def procedure(press):  # Checkpoint 0
     global checkpoint, procCount
-    if procCount > 6:
+    if procCount > 7:
         checkpoint = 1
-    elif procCount == 6:  # Condiiton to force participant to press enter twice
+    elif procCount == 7:  # Condiiton to force participant to press enter twice
         procCount += 1
     else:
         label.configure(image=procList[procCount])
         procCount += 1
 
-def add():
-    global nextCount
-    nextCount+=1
-
-def get_txt(entry):
-    val = entry.get()
-    return val
-
-
 ###CHNG DOT NUMBER
 def nextImg(press):  # Checkpoint 1
-    global nextCount, label, checkpoint, answer
+    global nextCount, label, checkpoint, skip
     if nextCount == 40:
         checkpoint = 2
     else:
-        txt.configure(state='disabled')
-        label.configure(image=pointList[nextCount])
-        #nextCount = nextCount + 1
-        window.after(500, next, keyboard.is_pressed('enter'))
-        #txt.delete(0, 'end')
+        if(skip == 0):
+            skip = 1
+            txt.delete(0, 'end')
+            txt.configure(state='disabled')
+            label.configure(image=pointList[nextCount])
+            nextCount += 1
+            window.after(1000, next, keyboard.is_pressed('enter'))
+        else:
+            if(len(txt.get()) < 1):
+                next('<Return>')
+            else:
+                txt.delete(0, 'end')
+                txt.configure(state='disabled')
+                label.configure(image=pointList[nextCount])
+                nextCount = nextCount + 1
+                window.after(1000, next, keyboard.is_pressed('enter'))
 
 def next(press):
-    global answer,nextCount
+    global answer, nextCount, checker
     txt.pack(ipady=5, pady=100)
     txt.configure(state='normal')
     label.configure(image=enterImage)
-    answer = str(get_txt(txt))
-    if len(answer) > 0:
-        #print(answer)
-        add()
-    txt.delete(0, 'end')
-###CHNG DOT NUMBER
 
 def loadScrn():
     global outroCount, checkpoint
-    if outroCount == 1:
+    if outroCount == 8:
         label.configure(image=overEstimateImage1)
-    elif outroCount == 2:
+    elif outroCount == 9:
         label.configure(image=overEstimateImage2)
-    elif outroCount == 3:
+    elif outroCount == 10:
         label.configure(image=overEstimateImage3)
-    else:
-        checkpoint = 3
-
+    #else:
+     #   checkpoint = 3
 
 def placement(press):  # Checkpoint 2
     global checkpoint, outroCount, label
     if outroCount == 0:
-        window.bind('<Return>', disable)
-        label.configure(image= wait)
-        window.after(5000, placement, keyboard.is_pressed('enter'))
+        label.configure(image=submit)
         outroCount += 1
     elif outroCount == 1:
+        label.configure(image=notify)
+        # window.after(5000, placement, keyboard.is_pressed('enter'))
+        outroCount += 1
+    elif outroCount == 2:
+        label.configure(image=rules1)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+    elif outroCount == 3:
+        label.configure(image=rules2)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+        outroCount += 1
+    elif outroCount == 4:
+        label.configure(image=rules3)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+        outroCount += 1
+    elif outroCount == 5:
+        label.configure(image=rules4)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+        outroCount += 1
+    elif outroCount == 6:
+        label.configure(image=rules5)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+        outroCount += 1
+    elif outroCount == 7:
+        window.bind('<Return>', disable)
+        label.configure(image=wait)
+        window.after(5000, placement, keyboard.is_pressed('enter'))
+    elif outroCount == 8:
         window.after(5000, loadScrn())
         window.bind('<Return>', pressed)
         outroCount += 1
-    elif outroCount == 2:
+    elif outroCount ==9:
         window.bind('<Return>', disable)
         label.configure(image=overEstimateImage2)
         window.after(5000, placement, keyboard.is_pressed('enter'))
         outroCount += 1
-    elif outroCount == 3:
+    elif outroCount == 10:
         window.bind('<Return>', pressed)
         window.after(5000, loadScrn())
         outroCount += 1
-    elif outroCount == 4:
-        #window.bind('<Return>', disable)
-        label.configure(image=rules1)
-        # window.after(5000, placement, keyboard.is_pressed('enter'))
-        outroCount += 1
-    elif outroCount == 5:
-        label.configure(image=rules2)
-        # window.after(5000, placement, keyboard.is_pressed('enter'))
-        outroCount += 1
-    elif outroCount == 6:
-        txt.configure(state='disabled')
-        label.configure(image=rules3)
-        # window.after(5000, placement, keyboard.is_pressed('enter'))
-        outroCount += 1
-    elif outroCount == 7:
-        label.configure(image=rules4)
-        # window.after(5000, placement, keyboard.is_pressed('enter'))
-        outroCount += 1
-    elif outroCount == 8:
-        label.configure(image=rules5)
-        # window.after(5000, placement, keyboard.is_pressed('enter'))
-        outroCount += 1
-    else:
-        checkpoint = 3
+
+
+
+
 
 
 def patch(press):  # Checkpoint 3
@@ -238,7 +232,7 @@ def openChatplat(code):
     webbrowser.open('chatplat.com/#/Chat/' + code, autoraise=True)
     os.system('keylogFINAL.py')
     webbrowser.open(
-        'https://docs.google.com/forms/d/e/1FAIpQLSfBuWUMCn411FhA3koRp3lw_HZF_3-peIFH-CWsfdTWGX5RFQ/viewform?usp=sf_link')
+        'https://unh.az1.qualtrics.com/jfe/form/SV_9uAwu18LcWS3ioR')
 
 
 def keylogger():
