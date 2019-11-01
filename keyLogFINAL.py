@@ -29,7 +29,7 @@ if hWnd:  # If the shell is visible then hide
 file = open("ParticipantNumber.txt","r")
 participantID = file.read()
 
-namer = "./Participant" + str(participantID) +  str(datetime.datetime.now().strftime("_%Y-%m-%d_%H.%M")) + ".csv"
+namer = "./keydata/Participant" + str(participantID) +  str(datetime.datetime.now().strftime("_%Y-%m-%d_%H.%M")) + ".csv"
 
 #insert #minimumGroups.participantID# into namer var
 
