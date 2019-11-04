@@ -134,9 +134,9 @@ def pressed(press):
 
 def procedure(press):  # Checkpoint 0
     global checkpoint, procCount
-    if procCount > 11:
+    if procCount > 6:
         checkpoint = 1
-    elif procCount == 11:  # Condiiton to force participant to press enter twice
+    elif procCount == 6:  # Condititon to force participant to press enter twice
         procCount += 1
     else:
         label.configure(image=procList[procCount])
