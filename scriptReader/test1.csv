@@ -1,0 +1,5 @@
+Group,Time,Id,User,Message
+"group 1","8/30/2019 7:05:54 PM","","System",">> User 1 has Connected"
+"group 1","8/30/2019 7:05:55 PM","","System",">> All chat participants have arrived. You may now chat!"
+"group 1","8/30/2019 7:05:55 PM","","System",">> User 2 has Connected"
+"group 1","8/30/2019 7:06:00 PM","none","User 1","hello"

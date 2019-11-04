@@ -65,7 +65,7 @@ control1 = tkobj.PhotoImage(file=".\\sample_images\\ctrl\\ctrl_1.png")
 control2 = tkobj.PhotoImage(file=".\\sample_images\\ctrl\\ctrl_2.png")
 #overEstimateImage3 = tkobj.PhotoImage(file=".\\sample_images\\overEstimator\\overEstimator3.png")
 
-rules1 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules1_ctrl.png")
+rules1 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules1.png")
 rules2 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules2.png")
 rules2dot5= tkobj.PhotoImage(file=".\\sample_images\\rules\\rules2_5.png")
 rules3 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules3.png")
@@ -134,9 +134,9 @@ def pressed(press):
 
 def procedure(press):  # Checkpoint 0
     global checkpoint, procCount
-    if procCount > 6:
+    if procCount > 11:
         checkpoint = 1
-    elif procCount == 6:  # Condiiton to force participant to press enter twice
+    elif procCount == 11:  # Condiiton to force participant to press enter twice
         procCount += 1
     else:
         label.configure(image=procList[procCount])
