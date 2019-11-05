@@ -70,7 +70,7 @@ notify = tkobj.PhotoImage(file= ".\\sample_images\\notify.png")
 patchImg = tkobj.PhotoImage(file= ".\\sample_images\\patch.png")
 underEstimateImage1 = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underEstimator1.png")
 underEstimateImage2 = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underEstimator2.png")
-underEstimateImage3 = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underEstimator3.png")
+underEstimateImage3 = tkobj.PhotoImage(file=".\\sample_images\\underEstimator\\underOutChat.png")
 
 rules1 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules1.png")
 rules2 = tkobj.PhotoImage(file=".\\sample_images\\rules\\rules2.png")

@@ -1,0 +1,10 @@
+Group,Time,Id,User,Message
+"group 1","11/4/2019 9:52:32 PM","","System",">> User 1 has Connected"
+"group 1","11/4/2019 9:52:35 PM","","System",">> All chat participants have arrived. You may now chat!"
+"group 1","11/4/2019 9:52:35 PM","","System",">> User 2 has Connected"
+"group 1","11/4/2019 9:52:57 PM","ccd9","User 2","hello"
+"group 1","11/4/2019 9:53:21 PM","ccd10","User 1","Hi there!"
+"group 1","11/4/2019 9:53:32 PM","ccd9","User 2","How are you doing today?"
+"group 1","11/4/2019 9:53:57 PM","ccd10","User 1","Ah. I'm doing great, how about you?"
+"group 1","11/4/2019 9:59:52 PM","","System",">> User 1 has Disconnected"
+"group 1","11/4/2019 9:59:57 PM","","System",">> User 2 has Disconnected"
