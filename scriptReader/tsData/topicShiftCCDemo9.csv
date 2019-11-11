@@ -1,9 +1,4 @@
 0,System,>> User 1 has Connected
 0,System,>> All chat participants have arrived. You may now chat!
-0,System,>> User 2 has Connected
-1,User 2,hello
-0,User 1,Hi there!
-1,User 2,How are you doing today?
-0,User 1,"Ah. I'm doing great, how about you?"
-0,System,>> User 1 has Disconnected
-0,System,>> User 2 has Disconnected
+1,System,>> User 2 has Connected
+0,User 1,hello
