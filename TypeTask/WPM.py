@@ -16,9 +16,8 @@ namer = "./typeData/Participant" + participantNum + "_typedata.csv"
 
 def counter():
     i = 0
-    raw_input(">> Press ENTER to begin")
+    raw_input(">> Press ENTER to begin. \n Once you finish typing out the statement, press ENTER again to record your results. \n \n")
     print (prompt)
-    print()
     begin_time = time()
     inp = raw_input("\n")
     end_time = time()
