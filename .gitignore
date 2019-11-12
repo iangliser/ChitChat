@@ -2,7 +2,9 @@
 .idea/ChitChat.iml
 .idea/misc.xml
 ParticipantNumber.txt
-scriptReader/tsData/topicShiftCCDemo9.csv
+scriptReader/tsData/
+TypeTask/ParticipantNumber.txt
+ScriptReader/ParticpantNumber.txt
 venv/Lib/site-packages/__pycache__/six.cpython-37.pyc
 venv/Lib/site-packages/easy-install.pth
 venv/Lib/site-packages/future-0.18.2-py3.7.egg-info/dependency_links.txt
@@ -1025,3 +1027,5 @@ venv/Scripts/winsound.pyd
 ParticipantNumber.txt
 .idea/misc.xml
 .idea/ChitChat.iml
+.idea/ChitChat.iml
+*.csv
