@@ -1023,3 +1023,5 @@ venv/Scripts/unicodedata.pyd
 venv/Scripts/vcruntime140.dll
 venv/Scripts/winsound.pyd
 ParticipantNumber.txt
+.idea/misc.xml
+.idea/ChitChat.iml
