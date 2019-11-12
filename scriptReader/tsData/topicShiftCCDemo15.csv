@@ -1,0 +1,13 @@
+0,System,>> User 1 has Connected
+0,System,>> All chat participants have arrived. You may now chat!
+1,System,>> User 2 has Connected
+0,User 1,Hello
+0,User 2,1591/O22WFZG9PUqLWCm//ccd15
+0,User 2,Hi there!
+1,User 1,How are you doing?
+0,User 2,"I'm doing great, how about you?"
+0,User 1,I'm great. How was your day today/
+1,User 2,Ah. I was really busy chatting with people on the web.
+0,System,>> User 1 has Disconnected
+1,System,>> User 2 has Disconnected
+0,System,>> This chat has now expired.

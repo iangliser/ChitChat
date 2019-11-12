@@ -1,0 +1,15 @@
+0,System,>> User 1 has Connected
+0,System,>> All chat participants have arrived. You may now chat!
+0,System,>> User 2 has Connected
+0,User 2,hi
+0,User 1,Hello there.
+1,User 2,how's your day?
+0,User 1,Everything is going extremely well.
+0,User 2,thats good!
+0,User 1,How are things going for you?
+0,User 2,"Pretty good, almost the weekend!"
+1,User 2,Do you have any fun plans?
+1,User 1,Thanks for the compliment. Nearly so.
+1,User 1,No I don't think I have any fun plans. But I do have an answer to every question..
+1,User 2,What's 395 divided by 7?
+0,System,>> This chat has now expired.

@@ -7,7 +7,7 @@ from pip._vendor.distlib.compat import raw_input
 
 i = 0
 cs = False
-prompt = "There are many idiosyncratic typing styles in between novice-style 'hunt and peck' and touch typing. For example, many 'hunt and peck' typists have the keyboard layout memorized and are able to type while focusing their gaze on the screen. Some use just two fingers, while others use 3-6 fingers. Some use their fingers very consistently, with the same finger being used to type the same character every time, while others vary the way they use their fingers."
+prompt = "There are many idiosyncratic typing styles in between novice-style 'hunt and peck and touch typing. For example, many hunt and peck typists have the keyboard layout memorized and are able to type \n while focusing their gaze on the screen. Some use just two fingers, while others use 3-6 fingers. Some use their fingers very consistently, with the same finger being used to type the same\n character every time, while others  vary the way they use their fingers."
 
 
 file = open("ParticipantNumber.txt", "r")
@@ -16,8 +16,8 @@ namer = "./typeData/Participant" + participantNum + "_typedata.csv"
 
 def counter():
     i = 0
+    raw_input(">> Press ENTER to begin. \n Once you finish typing out the statement, press ENTER again to record your results. \n \n")
     print (prompt)
-    raw_input(">> Press ENTER to begin")
     begin_time = time()
     inp = raw_input("\n")
     end_time = time()
