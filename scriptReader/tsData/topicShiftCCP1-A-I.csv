@@ -1,0 +1,20 @@
+0,System,>> User 1 has Connected
+0,System,>> All chat participants have arrived. You may now chat!
+0,System,>> User 2 has Connected
+0,User 2,hello! How are you?
+0,User 1,"hi! good, how are you?"
+0,User 2,Pretty good! How is your dY GOING?
+0,User 2,oops sorry I clicked caps lock accidentally haha
+0,User 1,Pretty good hahaha
+0,User 2,Omg i saw it snowed a little tody
+0,User 2,wow sorry for the spelling
+0,User 1,Ik! so exciting
+0,User 1,ahahaha no problem!
+0,User 2,Ik it's so pretty! I hope the winter isn't too rough
+0,User 1,Yeah same
+0,User 2,What are you doing today? Any plans?
+0,User 1,"Not sure yet, hbu?"
+1,User 2,"I just have class in the afternoon, and then I'm driving home to visit my family :)"
+0,User 1,That's nice!
+0,User 2,"Yeah! I miss them, they're pretty awesome"
+0,System,>> This chat has now expired.

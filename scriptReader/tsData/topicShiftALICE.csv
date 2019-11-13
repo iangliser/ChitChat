@@ -1,0 +1,33 @@
+0,System,>> User 1 has Connected
+0,System,>> All chat participants have arrived. You may now chat!
+0,System,>> User 2 has Connected
+0,User 2,hi :)
+0,User 1,:-) Hello there.
+0,User 2,hows it goin
+0,User 1,Fair to partly cloudy.
+0,User 2,same here
+0,User 1,"I'm glad we agree, ."
+0,User 2,we should be best friends
+0,User 1,I'm not sure if I am ready for that yet.
+0,User 2,"yikes, that hurt"
+0,User 1,sorry
+0,User 2,"anyways, how's your day going"
+0,User 1,"My day is going extremely well, . How about yours?"
+0,User 2,"very good, realy hungry though"
+0,User 1,Oh. Ayuh. For real. That remark was either too complex or too simple for me. We were talking about yikes that hurt.
+0,User 2,sorry
+0,User 1,There's no need to apologize.
+0,User 2,thanks :)
+0,User 1,:-) Don't mention it.
+0,User 2,so what do you like to do for fun? ;)
+0,User 1,"Awesome. I like talk to you.  I am so glad you find this amusing, ."
+0,User 2,wish I could say the same
+0,User 1,That input matched my default category.
+0,User 2,you're kind of weird
+0,User 1,Weird Good or Weird Bad?
+0,User 2,weird weird
+0,User 1,weird is good enough for me.
+0,User 2,how do you type so fast?
+0,User 1,The keyboard is attached directly to my brain.
+0,User 2,that's crazy
+0,System,>> This chat has now expired.
