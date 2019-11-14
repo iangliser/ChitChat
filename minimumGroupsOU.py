@@ -15,14 +15,8 @@ chatPlatCode = input("Enter ChatPlat code: ")
 participantID = input("Enter Participant ID: ")
 
 file1 = open("ParticipantNumber.txt", "w")
-file2 = open("./scriptReader/ParticipantNumber.txt", "w")
-file3 = open("./TypeTask/ParticipantNumber.txt", "w")
 file1.write(participantID)
-file2.write(participantID)
-file3.write(participantID)
 file1.close()
-file2.close()
-file3.close()
 # Hide shell after entering code, commented out for now, for troubleshooting
 """
 kernel32 = ctypes.WinDLL('kernel32') #Hides terminal

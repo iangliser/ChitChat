@@ -1,18 +1,25 @@
 #Daniel Berkowitz - pytypeseed
 import csv
-
+from pathlib import Path
 from time import time
-
 from pip._vendor.distlib.compat import raw_input
+import os
 
 i = 0
 cs = False
 prompt = "There are many idiosyncratic typing styles in between novice-style 'hunt and peck and touch typing. For example, many hunt and peck typists have the keyboard layout memorized and are able to type \n while focusing their gaze on the screen. Some use just two fingers, while others use 3-6 fingers. Some use their fingers very consistently, with the same finger being used to type the same\n character every time, while others  vary the way they use their fingers."
 
 
-file = open("ParticipantNumber.txt", "r")
+pNumPath = str(os.path.dirname(os.getcwd()) + "\\ParticipantNumber.txt")
+file = open(pNumPath, "r")
 participantNum = file.read()
+file.close()
+
 namer = "./typeData/Participant" + participantNum + "_typedata.csv"
+if(os.path.exists(namer)):
+    i = 1
+    while(os.path.exists(namer)):
+        namer = "./typeData/Participant" + participantNum + "(" + str(i) + ")" + "_typedata.csv"
 
 def counter():
     i = 0

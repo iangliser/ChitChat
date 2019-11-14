@@ -9,13 +9,15 @@ import os
 import ctypes
 import pynput
 import tkinter as tk
+from pathlib import Path
 
 # Input of Chatplat chatroom code, to be use for patch
 chatPlatCode = input("Enter ChatPlat code: ")
 participantID = input("Enter Participant ID: ")
 
-file = open("ParticipantNumber.txt", "w")
-file.write(participantID)
+file1 = open("ParticipantNumber.txt", "w")
+file1.write(participantID)
+file1.close()
 # Hide shell after entering code, commented out for now, for troubleshooting
 """
 kernel32 = ctypes.WinDLL('kernel32') #Hides terminal

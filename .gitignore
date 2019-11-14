@@ -1029,3 +1029,8 @@ ParticipantNumber.txt
 .idea/ChitChat.iml
 .idea/ChitChat.iml
 *.csv
+ParticipantNumber.txt
+__pycache__/minimumGroupsIU.cpython-37.pyc
+ParticipantNumber.txt
+scriptReader/__pycache__/scriptReader.cpython-37.pyc
+TypeTask/__pycache__/WPM.cpython-37.pyc

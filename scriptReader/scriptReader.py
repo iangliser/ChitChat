@@ -1,6 +1,7 @@
 from tkinter import *
 import csv
 import ctypes
+import os
 
 #Declaration of variables which will be used later to hide shell, ctypes library
 kernel32 = ctypes.WinDLL('kernel32') 
@@ -8,8 +9,11 @@ user32 = ctypes.WinDLL('user32')
 SW_HIDE = 0
 
 #Input variables: pNum for csv output name, file name for reading the ChatPlat csv
-file = open("ParticipantNumber.txt", "r")
+pNumPath = str(os.path.dirname(os.getcwd()) + "\\ParticipantNumber.txt")
+file = open(pNumPath, "r")
 participantNum = file.read()
+file.close()
+
 fileName = "./" + input("Enter name of the script/CSV: ")  + ".csv"
 
 hWnd = kernel32.GetConsoleWindow() #Returns boolean based upon if the shell is shown or not
@@ -22,6 +26,12 @@ window.attributes("-fullscreen", True)
 
 #variable declarations
 namer = "./tsData/topicShift" + str(participantNum) + ".csv"
+if(os.path.exists(namer)):
+    i = 1
+    while(os.path.exists(namer)):
+        namer = "./tsData/topicShift" + str(participantNum) + "(" + str(i) + ")" + ".csv"
+        i += 1
+
 count = 0
 counter = 0
 data = 0
